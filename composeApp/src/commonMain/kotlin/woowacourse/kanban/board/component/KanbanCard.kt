@@ -33,6 +33,7 @@ fun KanbanCard(
     Column(
         modifier = modifier
             .background(Color.White)
+            .width(286.dp)
             .clip(RoundedCornerShape(10.dp))
             .border(Dp.Hairline, Color.Gray, RoundedCornerShape(10.dp))
             .padding(17.dp),
@@ -61,7 +62,9 @@ fun KanbanCard(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(4.dp),
             ) {
-                tagList.forEach { tagName -> TagChip(tagName = tagName) }
+                tagList
+                    .take(5)
+                    .forEach { tagName -> TagChip(tagName = tagName) }
             }
         }
 
