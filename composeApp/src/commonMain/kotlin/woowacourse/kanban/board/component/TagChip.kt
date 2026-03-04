@@ -7,7 +7,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -15,17 +14,16 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun TagChip(
-    tagName: String,
+    name: String,
     modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier
-            .clip(CircleShape)
-            .background(Color.LightGray)
+            .background(Color.LightGray, CircleShape)
             .padding(vertical = 4.dp, horizontal = 8.dp),
     ) {
         Text(
-            text = tagName.take(5),
+            text = name.take(5),
             fontSize = 12.sp,
         )
     }
@@ -34,5 +32,5 @@ fun TagChip(
 @Preview
 @Composable
 private fun TagChipPreview() {
-    TagChip(tagName = "다섯글자입니다.")
+    TagChip(name = "다섯글자입니다.")
 }
