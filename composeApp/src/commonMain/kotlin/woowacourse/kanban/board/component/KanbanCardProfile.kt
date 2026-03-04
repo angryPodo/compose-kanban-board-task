@@ -1,11 +1,13 @@
 package woowacourse.kanban.board.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,10 +30,11 @@ fun KanbanCardProfile(
     Row(
         modifier = modifier.padding(end = 20.dp, bottom = 10.dp),
         verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         if (crewImage == null) {
             Icon(
-                imageVector = Icons.Default.AccountBox,
+                imageVector = Icons.Default.AccountCircle,
                 contentDescription = "기본 이미지",
                 modifier = imageModifier,
             )
