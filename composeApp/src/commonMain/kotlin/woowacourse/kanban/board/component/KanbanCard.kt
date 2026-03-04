@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -22,9 +23,9 @@ import org.jetbrains.compose.resources.DrawableResource
 @Composable
 fun KanBanCard(
     title: String,
-    tagList: List<String>,
     crewName: String,
     modifier: Modifier = Modifier,
+    tagList: List<String>? = null,
     content: String? = null,
     crewImage: DrawableResource? = null,
 ) {
@@ -34,14 +35,14 @@ fun KanBanCard(
             .clip(RoundedCornerShape(10.dp))
             .border(Dp.Hairline, Color.Gray, RoundedCornerShape(10.dp))
             .padding(17.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         Text(
             text = title,
             fontSize = 16.sp,
             fontWeight = FontWeight.Bold,
             maxLines = 1,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
         )
 
         if (content != null) {
@@ -50,8 +51,17 @@ fun KanBanCard(
                 fontSize = 14.sp,
                 color = Color.DarkGray,
                 maxLines = 2,
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
             )
+        }
+
+        if (!tagList.isNullOrEmpty()) {
+            FlowRow(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                tagList.forEach { tagName -> TagChip(tagName = tagName) }
+            }
         }
     }
 }
