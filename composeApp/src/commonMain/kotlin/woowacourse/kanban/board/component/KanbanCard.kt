@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,7 +22,7 @@ import org.jetbrains.compose.resources.DrawableResource
 
 
 @Composable
-fun KanBanCard(
+fun KanbanCard(
     title: String,
     crewName: String,
     modifier: Modifier = Modifier,
@@ -63,5 +64,12 @@ fun KanBanCard(
                 tagList.forEach { tagName -> TagChip(tagName = tagName) }
             }
         }
+
+        HorizontalDivider(thickness = Dp.Hairline, color = Color.LightGray)
+
+        KanbanCardProfile(
+            crewImage = crewImage,
+            crewName = crewName,
+        )
     }
 }
