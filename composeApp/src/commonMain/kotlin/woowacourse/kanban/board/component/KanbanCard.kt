@@ -43,5 +43,15 @@ fun KanBanCard(
             maxLines = 1,
             overflow = TextOverflow.Ellipsis
         )
+
+        if (content != null) {
+            Text(
+                text = content,
+                fontSize = 14.sp,
+                color = Color.DarkGray,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
     }
 }
