@@ -1,4 +1,4 @@
-package woowacourse.kanban.board.step1
+package woowacourse.kanban.board.step0
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite

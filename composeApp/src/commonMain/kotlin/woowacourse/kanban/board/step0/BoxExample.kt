@@ -1,4 +1,4 @@
-package woowacourse.kanban.board.step1
+package woowacourse.kanban.board.step0
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

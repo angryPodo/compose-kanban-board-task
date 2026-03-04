@@ -1,8 +1,7 @@
-package woowacourse.kanban.board.step1
+package woowacourse.kanban.board.step0
 
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import kanbanboard.composeapp.generated.resources.Res
 import kanbanboard.composeapp.generated.resources.image_example
