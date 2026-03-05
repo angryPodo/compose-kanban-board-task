@@ -11,7 +11,7 @@ import org.jetbrains.compose.resources.painterResource
 fun ImageExample() {
     Image(
         painter = painterResource(resource = Res.drawable.image_example),
-        contentDescription = "예시 이미지 입니다."
+        contentDescription = "예시 이미지 입니다.",
     )
 }
 

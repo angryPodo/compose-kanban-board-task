@@ -13,7 +13,7 @@ fun TextExample() {
         text = "Jetpack Compose Text 실습",
         fontSize = 22.sp,
         color = Color.Blue,
-        fontWeight = FontWeight.Bold
+        fontWeight = FontWeight.Bold,
     )
 }
 

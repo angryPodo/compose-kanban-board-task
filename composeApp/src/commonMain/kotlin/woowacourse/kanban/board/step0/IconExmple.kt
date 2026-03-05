@@ -10,7 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 fun IconExample() {
     Icon(
         imageVector = Icons.Default.Favorite,
-        contentDescription = "아이콘 예시입니다."
+        contentDescription = "아이콘 예시입니다.",
     )
 }
 
