@@ -68,10 +68,16 @@ fun KanbanCard(
 
         HorizontalDivider(thickness = Dp.Hairline, color = Color.LightGray)
 
-        KanbanCardProfile(
-            crewName = crewName,
-            crewImage = crewImage,
-        )
+        if (crewImage != null) {
+            KanbanCardProfile(
+                crewName = crewName,
+                crewImage = crewImage,
+            )
+        } else {
+            KanbanCardProfile(
+                crewName = crewName,
+            )
+        }
     }
 }
 
