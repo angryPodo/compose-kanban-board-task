@@ -33,7 +33,7 @@ fun KanbanCard(
     crewName: String,
     modifier: Modifier = Modifier,
     tags: List<String> = emptyList(),
-    content: String = "",
+    description: String? = null,
     crewImage: DrawableResource? = null,
 ) {
     require(title.isNotBlank()) { "KanbanCard의 title은 비어 있을 수 없습니다." }
@@ -54,9 +54,9 @@ fun KanbanCard(
             overflow = TextOverflow.Ellipsis,
         )
 
-        if (content.isNotBlank()) {
+        if (!description.isNullOrBlank()) {
             Text(
-                text = content,
+                text = description,
                 fontSize = 14.sp,
                 color = Color.DarkGray,
                 maxLines = 2,
@@ -103,7 +103,7 @@ private fun KanbanCardOptionalPreview() {
             title = "LazyColumn 컴포넌트 구현",
             crewName = "바드",
             tags = tags,
-            content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
+            description = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
         )
         KanbanCard(
             title = "LazyColumn 컴포넌트 구현",
@@ -113,7 +113,7 @@ private fun KanbanCardOptionalPreview() {
         KanbanCard(
             title = "LazyColumn 컴포넌트 구현",
             crewName = "바드",
-            content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
+            description = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.",
         )
         KanbanCard(
             title = "LazyColumn 컴포넌트 구현",
@@ -130,7 +130,7 @@ private fun KanbanCardMaxPreview() {
             title = "너무너무 긴 제목은 한 줄까지만 노출합니다. 그렇습니다. 감사합니다.",
             crewName = "바드바드바드바드바드바드바드바드바드바드바드바드바드바드",
             tags = listOf("컴포넌트", "성능", "긴 태그", "최대로", "5자까지", "5개제한임.", "6개임"),
-            content = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.".repeat(3),
+            description = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.".repeat(3),
         )
     }
 }
