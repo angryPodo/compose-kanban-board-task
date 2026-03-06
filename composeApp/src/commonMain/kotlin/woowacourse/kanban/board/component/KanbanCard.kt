@@ -89,7 +89,7 @@ private fun KanbanCardTags(tags: List<String>) {
 
 @Preview(device = Devices.DESKTOP)
 @Composable
-private fun KanbanCardOptionalPreview() {
+private fun KanbanCardPreview_Optional() {
     val tags = listOf("컴포넌트", "성능")
     Row(
         modifier = Modifier
@@ -122,7 +122,7 @@ private fun KanbanCardOptionalPreview() {
 
 @Preview
 @Composable
-private fun KanbanCardMaxPreview() {
+private fun KanbanCardPreview_Max() {
     Box(modifier = Modifier.padding(12.dp)) {
         KanbanCard(
             title = "너무너무 긴 제목은 한 줄까지만 노출합니다. 그렇습니다. 감사합니다.",
