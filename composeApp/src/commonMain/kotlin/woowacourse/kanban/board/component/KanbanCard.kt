@@ -24,9 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.DrawableResource
 
-/**
- * @param tags 최대 5개까지만 표시되는 태그 리스트입니다. 5개를 초과하면 상위 5개만 렌더링됩니다.
- */
 @Composable
 fun KanbanCard(
     title: String,
@@ -87,9 +84,7 @@ private fun KanbanCardTags(tags: List<String>) {
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        tags
-            .take(5)
-            .forEach { tag -> TagChip(name = tag) }
+        tags.forEach { tag -> TagChip(name = tag) }
     }
 }
 
