@@ -36,8 +36,6 @@ fun KanbanCard(
     description: String? = null,
     crewImage: DrawableResource? = null,
 ) {
-    require(title.isNotBlank()) { "KanbanCard의 title은 비어 있을 수 없습니다." }
-
     Column(
         modifier = modifier
             .width(286.dp)
