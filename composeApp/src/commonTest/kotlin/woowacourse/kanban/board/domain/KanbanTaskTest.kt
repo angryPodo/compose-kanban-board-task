@@ -1,7 +1,7 @@
 package woowacourse.kanban.board.domain
 
+import org.assertj.core.api.Assertions.assertThat
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 
 class KanbanTaskTest {
@@ -23,10 +23,10 @@ class KanbanTaskTest {
         )
 
         // Then
-        assertEquals(title, task.title)
-        assertEquals(description, task.description)
-        assertEquals(tags, task.tags)
-        assertEquals(crewName, task.crewName)
+        assertThat(task.title).isEqualTo(title)
+        assertThat(task.description).isEqualTo(description)
+        assertThat(task.tags).containsExactlyElementsOf(tags)
+        assertThat(task.crewName).isEqualTo(crewName)
     }
 
     @Test
@@ -38,7 +38,7 @@ class KanbanTaskTest {
         val exception = assertFailsWith<IllegalArgumentException> {
             KanbanTask(title = emptyTitle, crewName = "아키")
         }
-        assertEquals("제목은 비어 있거나 공백만 있을 수 없습니다.", exception.message)
+        assertThat(exception.message).isEqualTo("제목은 비어 있거나 공백만 있을 수 없습니다.")
     }
 
     @Test
@@ -50,7 +50,7 @@ class KanbanTaskTest {
         val exception = assertFailsWith<IllegalArgumentException> {
             KanbanTask(title = blankTitle, crewName = "아키")
         }
-        assertEquals("제목은 비어 있거나 공백만 있을 수 없습니다.", exception.message)
+        assertThat(exception.message).isEqualTo("제목은 비어 있거나 공백만 있을 수 없습니다.")
     }
 
     @Test
@@ -63,10 +63,10 @@ class KanbanTaskTest {
         val visibleTags = task.visibleTags
 
         // Then
-        assertEquals(5, visibleTags.size)
-        assertEquals(listOf("1", "2", "3", "4", "5"), visibleTags)
+        assertThat(visibleTags).hasSize(5)
+        assertThat(visibleTags).containsExactly("1", "2", "3", "4", "5")
         
         // 추가 검증: 원본 데이터는 6개로 유지된다
-        assertEquals(6, task.tags.size)
+        assertThat(task.tags).hasSize(6)
     }
 }
