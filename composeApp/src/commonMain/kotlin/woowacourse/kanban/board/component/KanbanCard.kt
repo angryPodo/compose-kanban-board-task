@@ -107,7 +107,7 @@ private fun KanbanCardPreview_Optional() {
             title = commonTitle,
             description = commonDescription,
             tags = tags,
-            crewName = commonCrewName
+            crewName = commonCrewName,
         )
         KanbanCard(
             title = fullTask.title,
@@ -119,7 +119,7 @@ private fun KanbanCardPreview_Optional() {
         val noDescriptionTask = KanbanTask(
             title = commonTitle,
             tags = tags,
-            crewName = commonCrewName
+            crewName = commonCrewName,
         )
         KanbanCard(
             title = noDescriptionTask.title,
@@ -130,7 +130,7 @@ private fun KanbanCardPreview_Optional() {
         val noTagsTask = KanbanTask(
             title = commonTitle,
             description = commonDescription,
-            crewName = commonCrewName
+            crewName = commonCrewName,
         )
         KanbanCard(
             title = noTagsTask.title,
@@ -140,7 +140,7 @@ private fun KanbanCardPreview_Optional() {
 
         val minimalTask = KanbanTask(
             title = commonTitle,
-            crewName = commonCrewName
+            crewName = commonCrewName,
         )
         KanbanCard(
             title = minimalTask.title,
@@ -157,7 +157,7 @@ private fun KanbanCardPreview_Max() {
             title = "너무너무 긴 제목은 한 줄까지만 노출합니다".repeat(3),
             description = "세로 스크롤 가능한 리스트 컴포넌트를 만들고 성능 최적화를 적용합니다.".repeat(3),
             tags = listOf("컴포넌트", "성능", "긴 태그", "최대로", "5자까지", "5개제한임.", "6개임"),
-            crewName = "아키".repeat(10)
+            crewName = "아키".repeat(10),
         )
         KanbanCard(
             title = maxTask.title,

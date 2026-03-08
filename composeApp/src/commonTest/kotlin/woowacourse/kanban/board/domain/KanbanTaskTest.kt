@@ -1,8 +1,8 @@
 package woowacourse.kanban.board.domain
 
-import org.assertj.core.api.Assertions.assertThat
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
+import org.assertj.core.api.Assertions.assertThat
 
 class KanbanTaskTest {
 
@@ -65,7 +65,7 @@ class KanbanTaskTest {
         // Then
         assertThat(visibleTags).hasSize(5)
         assertThat(visibleTags).containsExactly("1", "2", "3", "4", "5")
-        
+
         // 추가 검증: 원본 데이터는 6개로 유지된다
         assertThat(task.tags).hasSize(6)
     }

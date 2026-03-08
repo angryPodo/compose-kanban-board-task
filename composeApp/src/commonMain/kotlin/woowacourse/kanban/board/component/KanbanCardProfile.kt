@@ -22,11 +22,7 @@ import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun KanbanCardProfile(
-    crewName: String,
-    crewImage: DrawableResource,
-    modifier: Modifier = Modifier
-) {
+fun KanbanCardProfile(crewName: String, crewImage: DrawableResource, modifier: Modifier = Modifier) {
     KanbanCardProfileLayout(crewName = crewName, modifier = modifier) {
         Image(
             painter = painterResource(resource = crewImage),
@@ -37,10 +33,7 @@ fun KanbanCardProfile(
 }
 
 @Composable
-fun KanbanCardProfile(
-    crewName: String,
-    modifier: Modifier = Modifier
-) {
+fun KanbanCardProfile(crewName: String, modifier: Modifier = Modifier) {
     KanbanCardProfileLayout(crewName = crewName, modifier = modifier) {
         Icon(
             imageVector = Icons.Default.AccountCircle,
@@ -51,11 +44,7 @@ fun KanbanCardProfile(
 }
 
 @Composable
-private fun KanbanCardProfileLayout(
-    crewName: String,
-    modifier: Modifier = Modifier,
-    imageContent: @Composable () -> Unit,
-) {
+private fun KanbanCardProfileLayout(crewName: String, modifier: Modifier = Modifier, imageContent: @Composable () -> Unit) {
     Row(
         modifier = modifier.padding(end = 20.dp, bottom = 10.dp),
         verticalAlignment = Alignment.CenterVertically,
